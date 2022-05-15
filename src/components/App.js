@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "../assets/css/reset.css";
 import "../assets/css/styles.css";
 
-import Flashcards from "./Flashcards";
+import FlashScreen from "./FlashScreen";
 import SplashScreen from "./SplashScreen";
 
 export default function App() {
@@ -11,7 +11,7 @@ export default function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<SplashScreen />} />
-                <Route path="/flashcards" element={<Flashcards />} />
+                <Route path="/flashcards" element={<FlashScreen />} />
             </Routes>
         </BrowserRouter>
     )

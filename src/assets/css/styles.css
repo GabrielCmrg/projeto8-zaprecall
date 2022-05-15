@@ -10,8 +10,6 @@ h1 {
     font-family: 'Righteous', cursive;
     color: white;
     font-size: 36px;
-    margin-top: 24px;
-    margin-bottom: 42px;
 }
 
 .root {
@@ -29,6 +27,11 @@ h1 {
     justify-content: center;
 }
 
+.splash h1 {
+    margin-top: 24px;
+    margin-bottom: 42px;
+}
+
 .splash button {
     width: 246px;
     height: 54px;
@@ -41,4 +44,20 @@ h1 {
     cursor: pointer;
 }
 
-/* Flash cars styles */
+/* Flash screen styles */
+
+/* Top */
+.top {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 42px;
+}
+
+.top h1 {
+    margin: 0 20px;
+}
+
+a:link {
+    text-decoration: none;
+}
