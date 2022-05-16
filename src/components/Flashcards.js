@@ -6,16 +6,29 @@ function randomShuffleNumber() {
     return Math.random() - 0.5;
 }
 
-function ConcealedCard({index, setConcealed}) {
+function ConcealedCard({index, setConcealed, style}) {
+    let icon = "play-outline";
+    let clickFunction = () => setConcealed(false);
+    if (style === "correct") {
+        icon = "checkmark-circle";
+        clickFunction = () => {};
+    } else if (style === "incorrect") {
+        icon = "close-circle";
+        clickFunction = () => {};
+    } else if (style === "effort") {
+        icon = "help-circle";
+        clickFunction = () => {};
+    }
+
     return (
-        <div className="ask-card concealed">
+        <div className={"ask-card concealed " + style}>
             <span>Pergunta {index + 1}</span>
-            <ion-icon name="play-outline" onClick={() => setConcealed(false)}></ion-icon>
+            <ion-icon name={icon} onClick={clickFunction}></ion-icon>
         </div>
     )
 }
 
-function UnconcealedCard({ask, answer, setConcealed}) {
+function UnconcealedCard({ask, answer, setStyle}) {
     const [text, setText] = react.useState(ask);
     let complementaryClass;
     if (text === ask) {
@@ -31,9 +44,9 @@ function UnconcealedCard({ask, answer, setConcealed}) {
                 {text === ask ? 
                 <img src={flip} alt="flip arrow" width="30" height="20" onClick={() => setText(answer)}/>: 
                 <>
-                <div onClick={() => setConcealed(true)}>Não lembrei</div>
-                <div onClick={() => setConcealed(true)}>Quase não lembrei</div>
-                <div onClick={() => setConcealed(true)}>Zap!</div>
+                <div className="no" onClick={() => setStyle("incorrect")}>Não lembrei</div>
+                <div className="almost" onClick={() => setStyle("effort")}>Quase não lembrei</div>
+                <div className="yes" onClick={() => setStyle("correct")}>Zap!</div>
                 </>}
             </div>
         </div>
@@ -42,11 +55,13 @@ function UnconcealedCard({ask, answer, setConcealed}) {
 
 function Card({index, ask, answer}) {
     const [concealed, setConcealed] = react.useState(true);
+    const [style, setStyle] = react.useState("");
+    react.useEffect(() => setConcealed(true), [style]);
 
     return ( 
         concealed ?
-        <ConcealedCard index={index} setConcealed={setConcealed} /> : 
-        <UnconcealedCard ask={ask} answer={answer} setConcealed={setConcealed}/>
+        <ConcealedCard index={index} setConcealed={setConcealed} style={style} /> : 
+        <UnconcealedCard ask={ask} answer={answer} setStyle={setStyle}/>
     )
 }
 

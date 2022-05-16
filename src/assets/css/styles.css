@@ -51,7 +51,7 @@ h1 {
 
 /* Flash screen styles */
 
-/* Top */
+    /* Top */
 .top {
     display: flex;
     align-items: center;
@@ -67,7 +67,8 @@ a:link {
     text-decoration: none;
 }
 
-/* Cards */
+    /* Cards */
+        /* General */
 .ask-card {
     width: 300px;
     min-height: 65px;
@@ -78,27 +79,48 @@ a:link {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
+    font-size: 16px;
 }
 
 .ask-card ion-icon {
     font-size: 23px;
 }
 
+        /* Card type 1 */
 .concealed {
     background-color: white;
 }
 
+.concealed.correct {
+    color: #2FBE34;
+    text-decoration: line-through;
+}
+
+.concealed.incorrect {
+    color: #FF3030;
+    text-decoration: line-through;
+}
+
+.concealed.effort {
+    color: #FF922E;
+    text-decoration: line-through;
+}
+
+        /* Card type 2 */
 .not-concealed {
     flex-direction: column;
     background-color: #FFFFD4;
     padding: 18px 20px 6px;
     align-items: initial;
+    min-height: 131px;
 }
 
 .text {
     margin-bottom: 5px;
+    font-size: 18px;
 }
 
+            /* Bottom buttons 1 */
 .buttons {
     display: flex;
 }
@@ -107,6 +129,31 @@ a:link {
     justify-content: flex-end;
 }
 
+            /* Bottom buttons 2 */
 .buttons.answer {
     justify-content: space-between;
+}
+
+.buttons div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32%;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    padding: 8px;
+}
+
+.buttons .no {
+    background-color: #FF3030;
+}
+
+.buttons .almost {
+    background-color: #FF922E;
+}
+
+.buttons .yes {
+    background-color: #2FBE34;
 }
