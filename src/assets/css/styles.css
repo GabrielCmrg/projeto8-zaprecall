@@ -1,9 +1,14 @@
 /* Global changes */
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;700;800;900&family=Righteous&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #FB6B6B;
     font-family: 'Recursive', sans-serif;
-    width: 100%;
-    height: 100%;
+    color: #333333;
 }
 
 h1 {
@@ -51,7 +56,7 @@ h1 {
     display: flex;
     align-items: center;
     cursor: pointer;
-    margin-top: 42px;
+    margin: 42px 0;
 }
 
 .top h1 {
@@ -60,4 +65,48 @@ h1 {
 
 a:link {
     text-decoration: none;
+}
+
+/* Cards */
+.ask-card {
+    width: 300px;
+    min-height: 65px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.ask-card ion-icon {
+    font-size: 23px;
+}
+
+.concealed {
+    background-color: white;
+}
+
+.not-concealed {
+    flex-direction: column;
+    background-color: #FFFFD4;
+    padding: 18px 20px 6px;
+    align-items: initial;
+}
+
+.text {
+    margin-bottom: 5px;
+}
+
+.buttons {
+    display: flex;
+}
+
+.buttons.ask {
+    justify-content: flex-end;
+}
+
+.buttons.answer {
+    justify-content: space-between;
 }
