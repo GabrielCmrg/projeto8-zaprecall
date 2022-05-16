@@ -69,6 +69,10 @@ a:link {
 
     /* Cards */
         /* General */
+.cards {
+    margin-bottom: 150px;
+}
+
 .ask-card {
     width: 300px;
     min-height: 65px;
@@ -174,6 +178,7 @@ a:link {
     padding: 10px;
 }
 
+        /* Finish message */
 .bottom .title {
     display: flex;
     justify-content: center;
@@ -190,6 +195,7 @@ a:link {
     margin: 10px 0;
 }
 
+        /* Counter */
 .bottom-message {
     margin: 5px;
 }

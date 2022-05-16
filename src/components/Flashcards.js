@@ -88,7 +88,7 @@ export default function Flashcards({count, setCount, answerList, setAnswerList})
     ].sort(randomShuffleNumber);
 
     return (
-        <>
+        <div className="cards">
             { cards.map(
                 (card, index) => 
                 <Card
@@ -102,6 +102,6 @@ export default function Flashcards({count, setCount, answerList, setAnswerList})
                     setAnswerList={setAnswerList}
                 />)
             }
-        </>
+        </div>
     )
 }
