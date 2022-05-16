@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import party from "../assets/images/party.png";
 import sad from "../assets/images/sad.png";
 
-function FinishMessage({answerList}) {
+function FinishMessage({answerList, goal}) {
+    let zaps = 0;
+    answerList.forEach(result => {if (result === "correct") {zaps++}});
     let pic;
     let title;
     let message;
-    if (answerList.includes("incorrect")) {
+    if (zaps < goal) {
         pic = sad;
         title = "Putz...";
         message = "Ainda faltam alguns... Mas não desanime!";
@@ -27,7 +29,7 @@ function FinishMessage({answerList}) {
     )
 }
 
-export default function Bottom({count, answerList}) {
+export default function Bottom({count, answerList, goal}) {
     const iconList = [];
     answerList.forEach(result => {
         if (result === "correct") {
@@ -41,7 +43,7 @@ export default function Bottom({count, answerList}) {
 
     return (
         <div className="bottom">
-            {count === 4? <FinishMessage answerList={answerList}/>: <></>}
+            {count === 4? <FinishMessage answerList={answerList} goal={goal}/>: <></>}
             <span className="bottom-message">{count.toString() + "/4 CONCLUÍDOS"}</span>
             <div className="answer-list">
                 { iconList.map(icon => <ion-icon name={icon.name} style={{color: icon.color}}></ion-icon>)}
