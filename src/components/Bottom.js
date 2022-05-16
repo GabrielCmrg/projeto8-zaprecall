@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import party from "../assets/images/party.png";
 import sad from "../assets/images/sad.png";
 
@@ -44,6 +46,7 @@ export default function Bottom({count, answerList}) {
             <div className="answer-list">
                 { iconList.map(icon => <ion-icon name={icon.name} style={{color: icon.color}}></ion-icon>)}
             </div>
+            {count === 4? <Link to="/"><button>REINICIAR RECALL</button></Link>: <></>}
         </div>
     )
 }

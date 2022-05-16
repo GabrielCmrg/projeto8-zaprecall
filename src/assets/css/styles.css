@@ -70,7 +70,7 @@ a:link {
     /* Cards */
         /* General */
 .cards {
-    margin-bottom: 150px;
+    margin-bottom: 210px;
 }
 
 .ask-card {
@@ -202,4 +202,16 @@ a:link {
 
 .answer-list ion-icon {
     font-size: 23px;
+}
+
+        /* Reset button */
+.bottom button {
+    width: 167px;
+    height: 32px;
+    color: white;
+    background-color: #FB6B6B;
+    border-radius: 5px;
+    font-size: 14px;
+    border: none;
+    margin: 15px;
 }
