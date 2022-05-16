@@ -171,6 +171,27 @@ a:link {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px;
+}
+
+.bottom .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom .title img {
+    margin: 5px 15px;
+}
+
+.bottom p {
+    width: 200px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.bottom-message {
+    margin: 5px;
 }
 
 .answer-list ion-icon {
