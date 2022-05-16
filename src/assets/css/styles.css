@@ -157,3 +157,22 @@ a:link {
 .buttons .yes {
     background-color: #2FBE34;
 }
+
+    /* Bottom */
+.bottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 70px;
+    background-color: white;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.answer-list ion-icon {
+    font-size: 23px;
+}
